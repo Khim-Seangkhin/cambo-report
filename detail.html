@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Cambo Report</title>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-box">
+            <a href="#" class="logo">
+                <img class="logo" src="https://cambo-report.com/assets/img/cambo-logo.png" alt="">
+            </a>
+            <ul class="menu">
+                <li>
+                    <a class="search-btn search-btn-one">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="by_menu.html">វីដេអូ</a>
+                </li>
+                <li>
+                    <a href="#">ថេប្លេត-កុំព្យូទ័រ</a>
+                </li>
+                <li>
+                    <a href="#">ភាពយន្ដ</a>
+                </li>
+                <li>
+                    <a href="#">ទូសព្ទ</a>
+                </li>
+                <li>
+                    <a href="#">ចំណេះដឹងទូទៅ</a>
+                </li>
+            </ul>
+            <div class="search-btn search-btn-two">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div id="menu-btn" class="fa-solid fa-bars">
+                <i ></i>
+            </div>
+        </div>
+        <div class="overlay">
+            <div class="search-box">
+                <div class="search-item">
+                    <input type="text" name="" id="" placeholder="ស្វែងរក...">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Detail -->
+     <div class="container">
+        <!-- Adz Top -->
+         <div class="adz-img">
+            <img src="https://storage.cambo-report.com/21FZ6lDPyQv7IHAh4O5KcEKufsNWsR5HlmArMETS.jpg" alt="">
+         </div>
+         <!-- Detail Box -->
+          <div>
+
+              <div class="detail-box">
+                    <div class="detail">
+                        <h2>ចំណងជើង</h2>
+                        <img src="" alt="">
+                        <p>រៀនសរសេរកូដពីកម្រិតដំបូង</p>
+                    </div>
+                    <div class="popular">
+                        <h2 class="heading">ddddd</h2>
+                        <div class="box-container">
+                            <div class="box">1</div>
+                            <div class="box">2</div>
+                        </div>
+                    </div>
+                </div>
+            <a href="#">មើលបន្ថែម​</a>
+
+          </div>
+          <!-- Related -->
+           <div class="related">
+            <h2 class="heading">អត្ថបទទាក់ទង</h2>
+            <div class="box-container">
+                <div class="box">1</div>
+                <div class="box">2</div>
+            </div>
+           </div>
+     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-box">
+                <div style="text-align: center;">
+                    <h2 class="h2">CAMBO REPORT</h2>
+                    <p class="text">គេហទំព័របច្ចេកវិទ្យាសម្រាប់ប្រជាជនកម្ពុជា</p>
+                </div>
+                <div style="text-align: center;">
+                    <h3 class="h3">តាមដានយើងបន្ថែមទៀត</h3>
+                    <div class="icon-box">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="text" style="text-align: center;">រក្សាសិទ្ធិដោយ៖ ខេមបូរីផត &copy; 2024</p>
+        </div>
+    </footer>
+
+    <!-- script js -->
+     <script>
+        const btn = document.getElementById('menu-btn');
+        const menu = document.querySelector('.menu');
+        const search = document.querySelectorAll('.search-btn');
+        const overlay = document.querySelector(".overlay")
+        const close = document.querySelector(".search-item > i")
+
+        btn.addEventListener('click', function() {
+            menu.classList.toggle('active');
+            btn.classList.toggle('fa-xmark');
+        })
+        search.forEach(function(e) {
+            e.addEventListener("click", function() {
+                overlay.classList.add("active")
+            })
+        });
+
+        close.addEventListener("click", function() {
+            overlay.classList.remove("active")
+        })
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+            showSlides(slideIndex += n)
+        }
+
+        function showSlides(n) {
+            const slides = document.querySelectorAll(".slide")
+            if(n > slides.length) {slideIndex = 1}
+            if (n < 1) { slideIndex = slides.length}
+            slides.forEach(item => item.style.display = "none");
+            slides[slideIndex-1].style.display = "block";
+        }
+
+     </script>
+</body>
+</html>
